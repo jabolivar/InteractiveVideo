@@ -1,0 +1,8 @@
+{
+  "name": "InteractiveVideo",
+  "app_id": "df147cce",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
