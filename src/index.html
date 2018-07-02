@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <title>Interactive Video</title>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
@@ -18,17 +18,28 @@
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
-  <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.error('Error', err));
     }
-  </script>-->
+  </script>
 
   <link href="build/main.css" rel="stylesheet">
-
+  <script src="js/jquery.js"></script>
+  <script src="js/h5p.js"></script>
+  <script src="js/h5p-event-dispatcher.js"></script>
+  <script src="js/h5p-x-api-event.js"></script>
+  <script src="js/h5p-x-api.js"></script>
+  <script src="js/h5p-content-type.js"></script>
+  <script src="js/h5p-confirmation-dialog.js"></script>
+  <script src="js/h5p-action-bar.js"></script>
+  <script src="js/h5p-cachedassets-9e3e6af3427502ecbe49f544b3a1b6aad109709a.js"></script>
+  <link rel="stylesheet" href="styles/h5p.css">
+  <link rel="stylesheet" href="styles/h5p-confirmation-dialog.css">
+  <link rel="stylesheet" href="styles/h5p-core-button.css">
+  <link rel="stylesheet" href="styles/h5p-cachedassets-9e3e6af3427502ecbe49f544b3a1b6aad109709a.css">
 </head>
 <body>
 
@@ -44,6 +55,105 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
-
+  <div class="h5p-content" data-content-id="2"></div>
+  <script>
+    H5PIntegration = {
+    "baseUrl": "http://oneware.synology.me/video/",
+    "url": "/wordpress/wp-content/uploads/h5p",
+    "postUserStatistics": true,
+    "ajax": {
+        "setFinished": "http://oneware.synology.me/video/wp-admin/admin-ajax.php?token=a8bde1499b&action=h5p_setFinished",
+        "contentUserData": "http://oneware.synology.me/video/wp-admin/admin-ajax.php?token=340553dfa5&action=h5p_contents_user_data&content_id=:contentId&data_type=:dataType&sub_content_id=:subContentId"
+    },
+    "saveFreq": false,
+    "siteUrl": "http://oneware.synology.me/video",
+    "l10n": {
+        "H5P": {
+            "fullscreen": "Fullscreen",
+            "disableFullscreen": "Disable fullscreen",
+            "download": "Download",
+            "copyrights": "Rights of use",
+            "embed": "Embed",
+            "size": "Size",
+            "showAdvanced": "Show advanced",
+            "hideAdvanced": "Hide advanced",
+            "advancedHelp": "Include this script on your website if you want dynamic sizing of the embedded content:",
+            "copyrightInformation": "Rights of use",
+            "close": "Close",
+            "title": "Title",
+            "author": "Author",
+            "year": "Year",
+            "source": "Source",
+            "license": "License",
+            "thumbnail": "Thumbnail",
+            "noCopyrights": "No copyright information available for this content.",
+            "downloadDescription": "Download this content as a H5P file.",
+            "copyrightsDescription": "View copyright information for this content.",
+            "embedDescription": "View the embed code for this content.",
+            "h5pDescription": "Visit H5P.org to check out more cool content.",
+            "contentChanged": "This content has changed since you last used it.",
+            "startingOver": "You'll be starting over.",
+            "by": "by",
+            "showMore": "Show more",
+            "showLess": "Show less",
+            "subLevel": "Sublevel",
+            "confirmDialogHeader": "Confirm action",
+            "confirmDialogBody": "Please confirm that you wish to proceed. This action is not reversible.",
+            "cancelLabel": "Cancel",
+            "confirmLabel": "Confirm",
+            "licenseU": "Undisclosed",
+            "licenseCCBY": "Attribution",
+            "licenseCCBYSA": "Attribution-ShareAlike",
+            "licenseCCBYND": "Attribution-NoDerivs",
+            "licenseCCBYNC": "Attribution-NonCommercial",
+            "licenseCCBYNCSA": "Attribution-NonCommercial-ShareAlike",
+            "licenseCCBYNCND": "Attribution-NonCommercial-NoDerivs",
+            "licenseCC40": "4.0 International",
+            "licenseCC30": "3.0 Unported",
+            "licenseCC25": "2.5 Generic",
+            "licenseCC20": "2.0 Generic",
+            "licenseCC10": "1.0 Generic",
+            "licenseGPL": "General Public License",
+            "licenseV3": "Version 3",
+            "licenseV2": "Version 2",
+            "licenseV1": "Version 1",
+            "licensePD": "Public Domain",
+            "licenseCC010": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+            "licensePDM": "Public Domain Mark",
+            "licenseC": "Copyright"
+        }
+    },
+    "hubIsEnabled": true,
+    "reportingIsEnabled": false,
+    "user": {
+        "name": "admin",
+        "mail": "noreply@oneware.co"
+    },
+    "contents": {
+        "cid-2": {
+            "library": "H5P.InteractiveVideo 1.19",
+            "jsonContent": "{\"interactiveVideo\":{\"video\":{\"startScreenOptions\":{\"title\":\"Interactive Video\",\"hideStartTitle\":false,\"copyright\":\"\"},\"textTracks\":[{\"label\":\"Subtitles\",\"kind\":\"subtitles\",\"srcLang\":\"en\"}],\"files\":[{\"path\":\"http:\/\/oneware.synology.me\/video\/videos\\/files-5b36b9dde8761.mp4\",\"mime\":\"video\\/mp4\",\"copyright\":{\"license\":\"U\"},\"metadata\":{\"qualityName\":\"1024p\"}}]},\"assets\":{\"interactions\":[{\"x\":2.7548209366391,\"y\":41.564792176039,\"width\":13.774104683196,\"height\":12.67217630854,\"duration\":{\"from\":21,\"to\":21},\"libraryTitle\":\"Crossroads\",\"action\":{\"library\":\"H5P.GoToQuestion 1.3\",\"params\":{\"choices\":[{\"text\":\"Preguntar sobre los pacientes\",\"goTo\":49},{\"text\":\"Comentar estudio Molec\",\"goTo\":24},{\"text\":\"Ense\\u00f1ar publicaci\\u00f3n del estudio\",\"goTo\":37}],\"continueButtonLabel\":\"Continue\",\"text\":\"\\u00bfC\\u00f3mo deber\\u00eda continuar Elena?\"},\"subContentId\":\"6d016e7e-341a-43c1-9925-4b93e6dc7380\"},\"pause\":true,\"displayType\":\"poster\",\"buttonOnMobile\":false},{\"x\":2.7526687327824,\"y\":39.118457300275,\"width\":13.774104683196,\"height\":13.223140495868,\"duration\":{\"from\":31,\"to\":31},\"libraryTitle\":\"Crossroads\",\"action\":{\"library\":\"H5P.GoToQuestion 1.3\",\"params\":{\"choices\":[{\"text\":\"Preguntar sobre el diagn\\u00f3stico\",\"goTo\":65},{\"text\":\"Explicarle como ayudar a sus pacientes\",\"goTo\":80},{\"text\":\"Mostrar el estudio Molec\",\"goTo\":86}],\"continueButtonLabel\":\"Continue\",\"text\":\"\\u00bfC\\u00f3mo deber\\u00eda continuar Elena?\"},\"subContentId\":\"4e0b5cd1-a90b-4c76-86a4-55690f05523c\"},\"pause\":true,\"displayType\":\"poster\",\"buttonOnMobile\":false},{\"x\":4.1322314049587,\"y\":48.899755501222,\"width\":9.9173553719008,\"height\":8.8154269972452,\"duration\":{\"from\":44,\"to\":44},\"libraryTitle\":\"Crossroads\",\"action\":{\"library\":\"H5P.GoToQuestion 1.3\",\"params\":{\"choices\":[{\"text\":\"Mostrar eficacia\",\"goTo\":142},{\"text\":\"Mostrar resultados\",\"goTo\":108}],\"continueButtonLabel\":\"Continue\",\"text\":\"\\u00bfC\\u00f3mo deber\\u00eda continuar Elena?\"},\"subContentId\":\"992d8082-bbc3-4f8d-acf6-263981ca9c6b\"},\"pause\":true,\"displayType\":\"poster\",\"buttonOnMobile\":false},{\"x\":5.5096418732782,\"y\":51.344743276284,\"width\":10,\"height\":10,\"duration\":{\"from\":66,\"to\":66},\"libraryTitle\":\"Crossroads\",\"action\":{\"library\":\"H5P.GoToQuestion 1.3\",\"params\":{\"choices\":[{\"text\":\"Terminar\",\"goTo\":142},{\"text\":\"Volver a comenzar\",\"goTo\":22}],\"continueButtonLabel\":\"Continue\",\"text\":\"Como continuar\\u00e1 Elena?\"},\"subContentId\":\"95208190-8ce3-419c-9f7e-6432023a93d6\"},\"pause\":true,\"displayType\":\"poster\",\"buttonOnMobile\":false}],\"endscreens\":[{\"time\":169.28,\"label\":\"2:49 Submit screen\"}]},\"summary\":{\"task\":{\"library\":\"H5P.Summary 1.9\",\"params\":{\"intro\":\"<p>Fin del v\\u00eddeo.<\\/p>\\n\",\"overallFeedback\":[{\"from\":0,\"to\":100}],\"solvedLabel\":\"Progress:\",\"scoreLabel\":\"Wrong answers:\",\"resultLabel\":\"Your result\",\"labelCorrect\":\"Correct.\",\"labelIncorrect\":\"Incorrect! Please try again.\",\"labelCorrectAnswers\":\"Correct answers.\",\"tipButtonLabel\":\"Show tip\",\"scoreBarLabel\":\"You got :num out of :total points\",\"progressText\":\"Progress :num of :total\",\"summaries\":[{\"subContentId\":\"6c3894a7-b970-4718-9580-3f5c882a87cf\",\"tip\":\"\"}]},\"subContentId\":\"aca1a0df-fd94-407c-8488-33ef41b14c83\"},\"displayAt\":3}},\"override\":{\"autoplay\":false,\"loop\":false,\"showBookmarksmenuOnLoad\":false,\"showRewind10\":false,\"preventSkipping\":true,\"deactivateSound\":false},\"l10n\":{\"interaction\":\"Interaction\",\"play\":\"Play\",\"pause\":\"Pause\",\"mute\":\"Mute\",\"unmute\":\"Unmute\",\"quality\":\"Video Quality\",\"captions\":\"Captions\",\"close\":\"Close\",\"fullscreen\":\"Fullscreen\",\"exitFullscreen\":\"Exit Fullscreen\",\"summary\":\"Summary\",\"bookmarks\":\"Bookmarks\",\"endscreen\":\"Submit screen\",\"defaultAdaptivitySeekLabel\":\"Continue\",\"continueWithVideo\":\"Continue with video\",\"playbackRate\":\"Playback Rate\",\"rewind10\":\"Rewind 10 Seconds\",\"navDisabled\":\"Navigation is disabled\",\"sndDisabled\":\"Sound is disabled\",\"requiresCompletionWarning\":\"You need to answer all the questions correctly before continuing.\",\"back\":\"Back\",\"hours\":\"Hours\",\"minutes\":\"Minutes\",\"seconds\":\"Seconds\",\"currentTime\":\"Current time:\",\"totalTime\":\"Total time:\",\"navigationHotkeyInstructions\":\"Use key k for starting and stopping video at any time\",\"singleInteractionAnnouncement\":\"Interaction appeared:\",\"multipleInteractionsAnnouncement\":\"Multiple interactions appeared.\",\"videoPausedAnnouncement\":\"Video is paused\",\"content\":\"Content\",\"answered\":\"@answered answered\",\"endcardTitle\":\"@answered Question(s) answered\",\"endcardInformation\":\"You have answered @answered questions, click below to submit your answers.\",\"endcardInformationNoAnswers\":\"You have not answered any questions.\",\"endcardInformationMustHaveAnswer\":\"You have to answer at least one question before you can submit your answers.\",\"endcardSubmitButton\":\"Submit Answers\",\"endcardSubmitMessage\":\"Your answers have been submitted!\",\"endcardTableRowAnswered\":\"Answered questions\",\"endcardTableRowScore\":\"Score\",\"endcardAnsweredScore\":\"answered\"}}",
+            "fullScreen": "1",
+            "exportUrl": "/wordpress/wp-content/uploads/h5p/exports/video-molec-2.h5p",
+            "embedCode": "<iframe src=\"http://oneware.synology.me/video/wp-admin/admin-ajax.php?action=h5p_embed&id=2\" width=\":w\" height=\":h\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>",
+            "resizeCode": "<script src=\"http://oneware.synology.me/video/js/h5p-resizer.js\" charset=\"UTF-8\"><\/script>",
+            "url": "http://oneware.synology.me/video/wp-admin/admin-ajax.php?action=h5p_embed&id=2",
+            "title": "Video Molec",
+            "displayOptions": {
+                "frame": true,
+                "export": true,
+                "embed": true,
+                "copyright": true,
+                "icon": true
+            },
+            "contentUserData": [
+                {
+                    "state": "{}"
+                }
+            ]
+        }
+    }
+};
+  </script>
 </body>
 </html>
